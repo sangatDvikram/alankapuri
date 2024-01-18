@@ -1,6 +1,10 @@
 import 'package:alankapuri/constants/colors.dart';
 import 'package:alankapuri/constants/constants.dart';
+import 'package:alankapuri/pages/events.dart';
+import 'package:alankapuri/pages/groups.dart';
+import 'package:alankapuri/pages/homepage.dart';
 import 'package:alankapuri/pages/login.dart';
+import 'package:alankapuri/pages/maintenance.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,8 +19,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: APP_TITLE,
+      routes: {
+        HOME_ROUTE: (context) => const HomePage(),
+        MAINTAINANCE_ROUTE: (context) => const MaintenancePage(),
+        EVENTS_ROUTE: (context) => const EventPage(),
+        GROUPS_ROUTE: (context) => const GroupsPage(),
+        LOGIN_ROUTE: (context) => const LoginPage(),
+      },
       theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
-      darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
       home: LoginPage(),
     );
   }
