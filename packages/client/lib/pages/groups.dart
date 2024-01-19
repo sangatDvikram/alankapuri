@@ -1,9 +1,6 @@
 import 'package:alankapuri/components/molecules/bottomNavigation.dart';
 import 'package:alankapuri/constants/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_pay_upi/flutter_pay_upi_manager.dart';
-import 'package:flutter_pay_upi/model/upi_response.dart';
-import 'package:upi_payment_qrcode_generator/upi_payment_qrcode_generator.dart';
 
 class GroupsPage extends StatefulWidget {
   const GroupsPage({super.key});

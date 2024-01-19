@@ -16,3 +16,7 @@ const GROUPS_ROUTE = '/groups';
 const MAINTENANCE_AMMOUNT = 1;
 const MAINTENANCE_UPI_ID = 'diliptsangat@upi';
 const MAINTENANCE_USER_NAME = 'Alankapuri society';
+
+const RAZORPAY_KEY = 'rzp_live_rXW8Y9Fm924e7y';
+const RAZORPAY_KEY_SECRET = 'nMk8tUOno1Hikdjb1xpofglL';
+const SECURITY_NUMBER = 9503415652;

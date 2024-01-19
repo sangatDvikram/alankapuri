@@ -24,75 +24,74 @@ class _LoginPageState extends State<LoginPage> {
         body: SingleChildScrollView(
             child: SafeArea(
                 child: Container(
-                    height: MediaQuery.of(context).size.longestSide,
-                    padding: EdgeInsets.only(left: 16.0, right: 16),
+                    height: MediaQuery.of(context).size.height,
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          SizedBox(
-                              height: 300,
-                              child: Image(
-                                image:
-                                    AssetImage('assets/logo/logo-banner.png'),
-                              )),
+                          Expanded(
+                              child: Center(
+                            child: SizedBox(
+                                height: 300,
+                                child: Image(
+                                  image:
+                                      AssetImage('assets/logo/logo-banner.png'),
+                                )),
+                          )),
                           SizedBox(
                             height: 24,
                           ),
-                          Expanded(
-                            child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(50),
-                                      topRight: Radius.circular(50)),
-                                  color: Colors.white,
-                                ),
-                                child: Padding(
-                                    padding: EdgeInsets.all(24),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.stretch,
-                                      children: [
-                                        Text(
-                                          LOGIN_TITLE,
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .headlineSmall
-                                              ?.copyWith(
-                                                fontWeight: FontWeight.bold,
-                                              ),
+                          Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(50),
+                                    topRight: Radius.circular(50)),
+                                color: Colors.white,
+                              ),
+                              child: Padding(
+                                  padding: EdgeInsets.all(24),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.stretch,
+                                    children: [
+                                      Text(
+                                        LOGIN_TITLE,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headlineSmall
+                                            ?.copyWith(
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                      ),
+                                      TextField(
+                                        key: const ValueKey(
+                                            'carNumberTextField'),
+                                        decoration: const InputDecoration(
+                                          border: UnderlineInputBorder(),
+                                          labelText: 'Enter Phone Number',
                                         ),
-                                        TextField(
+                                      ),
+                                      const SizedBox(
+                                        height: 16,
+                                      ),
+                                      ElevatedButton.icon(
+                                          onPressed: _moveToHomePage,
                                           key: const ValueKey(
-                                              'carNumberTextField'),
-                                          decoration: const InputDecoration(
-                                            border: UnderlineInputBorder(),
-                                            labelText: 'Enter Phone Number',
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          height: 16,
-                                        ),
-                                        ElevatedButton.icon(
-                                            onPressed: _moveToHomePage,
-                                            key: const ValueKey(
-                                                'parkingLotAllotmentButton'),
-                                            icon: false
-                                                ? Container(
-                                                    width: 20,
-                                                    height: 20,
-                                                    padding:
-                                                        const EdgeInsets.all(
-                                                            2.0),
-                                                    child:
-                                                        const CircularProgressIndicator(
-                                                      strokeWidth: 2,
-                                                    ),
-                                                  )
-                                                : const Icon(Icons.login),
-                                            label: const Text('Login')),
-                                      ],
-                                    ))),
-                          )
+                                              'parkingLotAllotmentButton'),
+                                          icon: false
+                                              ? Container(
+                                                  width: 20,
+                                                  height: 20,
+                                                  padding:
+                                                      const EdgeInsets.all(2.0),
+                                                  child:
+                                                      const CircularProgressIndicator(
+                                                    strokeWidth: 2,
+                                                  ),
+                                                )
+                                              : const Icon(Icons.login),
+                                          label: const Text('Login')),
+                                    ],
+                                  ))),
                         ])))));
   }
 }
