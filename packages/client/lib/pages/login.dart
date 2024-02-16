@@ -28,8 +28,8 @@ class _LoginPageState extends State<LoginPage> {
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          Expanded(
-                              child: Center(
+                          const Expanded(
+                              child:  Center(
                             child: SizedBox(
                                 height: 300,
                                 child: Image(
@@ -37,11 +37,8 @@ class _LoginPageState extends State<LoginPage> {
                                       AssetImage('assets/logo/logo-banner.png'),
                                 )),
                           )),
-                          SizedBox(
-                            height: 24,
-                          ),
                           Container(
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(50),
                                     topRight: Radius.circular(50)),
@@ -62,10 +59,10 @@ class _LoginPageState extends State<LoginPage> {
                                               fontWeight: FontWeight.bold,
                                             ),
                                       ),
-                                      TextField(
-                                        key: const ValueKey(
+                                      const  TextField(
+                                        key:  ValueKey(
                                             'carNumberTextField'),
-                                        decoration: const InputDecoration(
+                                        decoration: InputDecoration(
                                           border: UnderlineInputBorder(),
                                           labelText: 'Enter Phone Number',
                                         ),

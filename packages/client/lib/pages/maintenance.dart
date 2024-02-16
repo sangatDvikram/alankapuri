@@ -1,5 +1,6 @@
 import 'package:alankapuri/components/molecules/bottomNavigation.dart';
 import 'package:alankapuri/constants/constants.dart';
+import 'package:easy_upi_payment/easy_upi_payment.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_pay_upi/flutter_pay_upi_manager.dart';
 import 'package:flutter_pay_upi/model/upi_response.dart';
@@ -265,6 +266,77 @@ class _MaintenancePageState extends State<MaintenancePage> {
                             style: TextStyle(fontWeight: FontWeight.bold),
                           );
                         })),
+                SizedBox(
+                  height: 16,
+                ),
+                ElevatedButton.icon(
+                    onPressed: () async {
+                      try {
+                        final response =
+                            await EasyUpiPaymentPlatform.instance.startPayment(
+                          EasyUpiPaymentModel(
+                            payeeVpa: 'gaurav.jajoo@upi',
+                            payeeName: 'Gaurav Jajoo',
+                            amount: 10.0,
+                            description: 'Testing payment',
+                          ),
+                        );
+                        // TODO: add your success logic here
+                        print(response);
+                        showModalBottomSheet<void>(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return SizedBox(
+                              height: 200,
+                              child: Center(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: <Widget>[
+                                    Text('Payment Success'),
+                                    Text(
+                                        'Transaction Id : ${response?.transactionId}'),
+                                    Text(
+                                        'Transaction Ref Id: ${response?.transactionRefId}'),
+                                    Text(
+                                        'Transaction Amount: ${response?.amount}'),
+                                    ElevatedButton(
+                                      child: const Text('Close'),
+                                      onPressed: () => Navigator.pop(context),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      } on EasyUpiPaymentException catch (error) {
+                        showModalBottomSheet<void>(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return SizedBox(
+                              height: 200,
+                              child: Center(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: <Widget>[
+                                    Text('Payment Error'),
+                                    Text('Error : ${error.toString()}'),
+                                    ElevatedButton(
+                                      child: const Text('Close'),
+                                      onPressed: () => Navigator.pop(context),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      }
+                    },
+                    icon: Icon(Icons.currency_rupee),
+                    label: Text('Pay using UPI')),
                 SizedBox(
                   height: 16,
                 ),

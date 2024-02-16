@@ -23,9 +23,12 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+    padding: EdgeInsets.all(16),
+    child: Container(
+    height: MediaQuery.of(context).size.height,
+    padding: EdgeInsets.all(6.0),
+    child: Column(
+    crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text('Welcome, User',
@@ -44,7 +47,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
-      ),
+    )),
       bottomNavigationBar:const BottonNavigation(),
     );
   }

@@ -41,6 +41,7 @@ dependencies:
   http: ^1.2.0
   upi_payment_qrcode_generator: ^1.4.0
   url_launcher: ^6.2.3
+  easy_upi_payment: ^0.1.5
 
 dev_dependencies:
   flutter_test:
