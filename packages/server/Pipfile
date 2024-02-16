@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
+django = "4.1.3"
 djangorestframework = "*"
 razorpay = "*"
 django-environ = "*"
@@ -13,4 +13,4 @@ drf-yasg = {extras = ["validation"], version = "*"}
 [dev-packages]
 
 [requires]
-python_version = "3.11"
+python_version = "3.9"
