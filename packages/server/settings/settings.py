@@ -35,7 +35,7 @@ DEBUG = env('DEBUG')
 # Take environment variables from .env file
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.vercel.app']
 
 
 # Application definition

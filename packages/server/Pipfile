@@ -4,11 +4,30 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "4.2.10"
-djangorestframework = "*"
-razorpay = "*"
-django-environ = "*"
-drf-yasg = {extras = ["validation"], version = "*"}
+django = "==4.2.10"
+djangorestframework = "==3.14.0"
+razorpay = "==1.4.1"
+django-environ = "==0.11.2"
+drf-yasg = "==1.21.7"
+asgiref = "==3.7.2"
+attrs = "==23.2.0"
+certifi = "==2024.2.2"
+charset-normalizer = "==3.3.2"
+idna = "==3.6"
+inflection = "==0.5.1"
+jsonschema = "==4.21.1"
+jsonschema-specifications = "==2023.12.1"
+pytz = "==2024.1"
+pyyaml = "==6.0.1"
+referencing = "==0.33.0"
+requests = "==2.31.0"
+rpds-py = "==0.18.0"
+sqlparse = "==0.4.4"
+swagger-spec-validator = "==3.0.3"
+typing-extensions = "==4.9.0"
+tzdata = "==2024.1"
+uritemplate = "==4.1.1"
+urllib3 = "==2.2.0"
 
 [dev-packages]
 
